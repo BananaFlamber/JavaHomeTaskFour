@@ -1,8 +1,4 @@
-import java.lang.reflect.Array;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -25,6 +21,19 @@ public class Main {
 
             System.out.println(notionMap);
         }
+        while (notion.contains("print"));
+        {
+            String[] parts = notionSplit(notion);
+
+            System.out.println(Arrays.toString(parts));
+            String result = new String();
+            if (!notionMap.contains(parts[1])) {
+                throw new IllegalArgumentException("Такого элемента не существует!");
+            } else {
+                result = notionMap.get(parts[1]);
+                System.out.println(result);
+            }
+        }
     }
 
     public static String[] notionSplit(String notion) {
@@ -38,3 +47,30 @@ public class Main {
         }
     }
 }
+
+
+///   Вторая задача
+//
+//    public static void main(String[] args) {
+//
+//        int[] listMas = {1,2,3,4,5,6,7,8};
+//        LinkedList<Integer> linkList = new LinkedList<>();
+//
+//        for (Integer temp : listMas) {
+//            linkList.add(temp);
+//        }
+//
+//        int temp = 0;
+//        while (temp != linkList.size() - 1) {
+//            linkList.add(linkList.size()-temp, linkList.getFirst());
+//            linkList.removeFirst();
+//            temp++;
+//        }
+//
+//
+//        System.out.println("linkList = " + linkList);
+//
+//
+//    }
+//}
+///
